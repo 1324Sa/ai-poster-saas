@@ -1,0 +1,19 @@
+poster-ai-saas/
+├── frontend/                     # Next.js Application
+│   ├── app/
+│   │   ├── components/
+│   │   │   └── PosterEditor.tsx  # Core Interactive Canvas Component
+│   │   ├── page.tsx              # Main Landing / Editor Route
+│   │   └── layout.tsx
+│   ├── public/                   # Static Assets
+│   ├── package.json
+│   └── tsconfig.json
+│
+└── backend/                      # FastAPI Backend
+    ├── app/
+    │   ├── api/                  # API Endpoints & Routes
+    │   ├── core/                 # Config & Security Settings
+    │   └── tasks/                # Celery Background Workers
+    ├── main.py                   # FastAPI Entry Point
+    ├── requirements.txt          # Python Dependencies
+    └── Procfile                  # Render Deployment Config
