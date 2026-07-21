@@ -303,6 +303,7 @@ export default function PosterEditor({ imageUrl }: PosterEditorProps) {
     const dataURL = fabricCanvasRef.current.toDataURL({
       format: "png",
       quality: 1,
+      multiplier: 1,
     });
     const link = document.createElement("a");
     link.download = "poster.png";
@@ -462,15 +463,57 @@ export default function PosterEditor({ imageUrl }: PosterEditorProps) {
       {/* قائمة 7 فلاتر للصور */}
       {showFiltersMenu && (
         <div className="flex flex-wrap justify-center gap-2 bg-slate-900 p-3 rounded-lg border border-purple-500/50 shadow-lg w-full max-w-2xl">
-          <span className="text-xs text-purple-300 font-bold self-center ml-2">اختر فلتر للصورة المحددة:</span>
-          <button onClick={() => applyFilter("none")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">بدون</button>
-          <button onClick={() => applyFilter("grayscale")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">أبيض وأسود</button>
-          <button onClick={() => applyFilter("sepia")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">سبيا (دافئ)</button>
-          <button onClick={() => applyFilter("invert")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">عكس الألوان</button>
-          <button onClick={() => applyFilter("blur")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">ضبابي (Blur)</button>
-          <button onClick={() => applyFilter("pixelate")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">بكسلة (Pixel)</button>
-          <button onClick={() => applyFilter("contrast")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">تباين عالي</button>
-          <button onClick={() => applyFilter("brightness")} className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600">إضاءة عالية</button>
+          <span className="text-xs text-purple-300 font-bold self-center ml-2">
+            اختر فلتر للصورة المحددة:
+          </span>
+          <button
+            onClick={() => applyFilter("none")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            بدون
+          </button>
+          <button
+            onClick={() => applyFilter("grayscale")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            أبيض وأسود
+          </button>
+          <button
+            onClick={() => applyFilter("sepia")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            سبيا (دافئ)
+          </button>
+          <button
+            onClick={() => applyFilter("invert")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            عكس الألوان
+          </button>
+          <button
+            onClick={() => applyFilter("blur")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            ضبابي (Blur)
+          </button>
+          <button
+            onClick={() => applyFilter("pixelate")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            بكسلة (Pixel)
+          </button>
+          <button
+            onClick={() => applyFilter("contrast")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            تباين عالي
+          </button>
+          <button
+            onClick={() => applyFilter("brightness")}
+            className="bg-slate-800 hover:bg-slate-700 text-white text-xs px-2.5 py-1 rounded border border-slate-600"
+          >
+            إضاءة عالية
+          </button>
         </div>
       )}
 
